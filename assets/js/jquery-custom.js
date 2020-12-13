@@ -55,3 +55,40 @@ function registro() {
         });
     }
 }
+
+/* Dashboard */
+
+function dashboard_login() {
+    if ($('#formadd').valid()) {
+        showModal();
+        $.ajax({
+            url: $('#formadd').attr('action'),
+            type: "POST",
+            data: $('#formadd').serialize(),
+            datatype: 'json'
+        }).done(function (response) {
+            hideModal();
+            var obj = JSON.parse(response);
+            if (obj.success == 1) {
+                let base_url = $('#base-url').attr('href');
+                window.location.href = base_url + 'dashboard';
+            } else {
+                $('#error').parent().removeClass('hidden');
+                $('#error').html(obj.msj);
+            }
+        }).fail(function () {
+            console.log('Error...');
+        });
+    }
+}
+
+function add() {
+    if ($('#formadd').valid()) {
+        showModal();
+        $('#formadd').submit();
+    }
+}
+
+function reset_form(id){
+    $('#' + id)[0].reset();
+}

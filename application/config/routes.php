@@ -57,5 +57,18 @@ $route['registro'] = 'front/accesos/registro';
 $route['registro/add-usuario'] = 'front/accesos/add_usuario';
 $route['registro/success'] = 'front/accesos/registro_success';
 
+$route['dashboard'] = 'back/dashboard';
+$route['dashboard/login'] = 'back/dashboard/login';
+$route['dashboard/login-access'] = 'back/dashboard/login_access';
+$route['dashboard/logout'] = 'back/dashboard/logout';
+
+$route['dashboard/peliculas'] = 'back/peliculas';
+$route['dashboard/peliculas/add'] = 'back/peliculas/add_pelicula';
+$route['dashboard/peliculas/save'] = 'back/peliculas/save_pelicula';
+$route['dashboard/peliculas/view/(:num)'] = 'back/peliculas/view_pelicula/$1';
+$route['dashboard/peliculas/edit/(:num)'] = 'back/peliculas/edit_pelicula/$1';
+$route['dashboard/peliculas/update'] = 'back/peliculas/update_pelicula';
+$route['dashboard/peliculas/delete/(:num)'] = 'back/peliculas/delete_pelicula/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
